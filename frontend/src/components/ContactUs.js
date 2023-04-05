@@ -43,11 +43,11 @@ export default function () {
           <section className="mb-32  lg:p-[2rem] bg-blend-lighten bg-white bg-no-repeat bg-[length:100%_100%]  rounded-2xl text-gray-800">
             <div className="flex justify-center lg:mt-[1rem] mb-[2rem] lg:mb-[2rem]">
               <div className="text-center lg:max-w-3xl md:max-w-xl">
-                {/* <h2 className="text-3xl lg:text-4xl font-bold pt-[4rem] px-6">
+                <h2 className="text-3xl lg:text-4xl font-bold pt-[4rem] px-6">
                   Contact us
-                </h2> */}
+                </h2>
                 <p className="mb-10 lg:text-lg font-medium pt-[1.2rem]">
-                  Have any questions? We'd love to hear from you!
+                  {/* Have any questions? We'd love to hear from you! */}
                 </p>
               </div>
             </div>
