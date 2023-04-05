@@ -1,0 +1,117 @@
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+
+
+body{background: url('../image/body-background.jpg'); background-size: 100%; background-repeat: repeat-y;}
+.slide::after{
+    position: absolute;
+    content: '';
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #00000080;
+}
+.perfect-choice .box{
+    position: relative;
+    
+}
+  
+
+
+
+
+.story-slider .item{
+    overflow: hidden;
+
+}
+.story-slider .item .story-title{
+    transition: all .5s ease-in-out;
+}
+.story-slider .item:hover .story-title{
+    bottom: 0%;
+    transition: all .5s ease-in-out;
+}
+.story-slider .item img{
+    transition: all .5s ease-in-out;
+}
+.story-slider .item:hover img{
+    transform: scale(1.1);
+    transition: all .5s ease-in-out;
+}
+.mega-menu:hover .dropdwon-content{
+    display: block !important;
+}
+
+.perfect-choice .box::before{
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    left: 0px;
+    width: 30%;
+    height: 1px;
+    background: rgb(201, 201, 201);
+}
+.heart-ring.border{border-color:black !important;}
+.interior .box:before{
+    position: absolute;
+    content: '';
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+
+}
+.review .border-\[2px\]{
+    border-color: #8f8e8e !important;
+} 
+input:focus-visible{outline: none !important;}
+
+
+.our-story{background:linear-gradient(rgba(3, 3, 3, 0.5), rgba(3, 3, 3, 0.5)),url('../image/our-story-background.jpg'); background-size: cover; background-position-y: -200px; height: 500px;}
+
+
+
+
+#inquiry-form .model{
+    position: fixed;
+    top: 0px;
+    right: -500px;
+    transition: all .5s ease-in-out;
+}
+body.active #inquiry-form .model{
+    right: 0px;
+    transition: all .5s ease-in-out;
+}
+
+.interior .slick-prev, .interior .slick-next{
+    width: 40px !important;
+}
+.interior .slick-prev:before, .interior .slick-next:before{
+    font-size: 40px;
+    color: #4a6021;
+}
+.interior .slick-prev{
+    margin-top: 8px;
+    left: -10px;
+    z-index: 5;
+    
+}
+.interior .slick-next{
+    right: -10px;
+}
+.our-client img{
+    width: 60%;
+    /* aspect-ratio : 3/2; */
+    object-fit:contain;
+}
+footer{
+    background-image: url("../image/footer-img.jpg");
+}
+
