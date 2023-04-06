@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Select from "react-select";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
 const Menus = [
   {
     mainMenuName: "Home",
@@ -264,23 +265,17 @@ const Menus = [
 ];
 
 let DesktopMenu = (props) => {
-  const SeatingSubItem = [
-    "MORDEN SOFASET",
-    "MORDEN 3 SEATER SOFA",
-    "MORDEN SOFA CHAIRS",
-    "SECTIONAL SOFA",
-    "WINGCHAIRS",
-    "CHALISE LOUNGE",
-    "OTTOMON",
-  ];
-
+  
+  const Navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [showMenufurniture, setShowMenu] = useState(false);
   const [selectFType, setFType] = useState(0);
   const [selectMenu, setSelectedMenu] = useState(0);
-  const [previousRef, setPreviousRef] = useState(null);
-  const [currentRef, setCurrentRef] = useState(null);
   const navRef = useRef();
+  let { loginUser } = useParams();
+ 
+
+
 
   const onClickMenu = () => {
     setOpen(!open);
@@ -308,11 +303,6 @@ let DesktopMenu = (props) => {
     const eventValue = e.value;
     setFType(eventValue);
   };
-  const Navigate = useNavigate();
-
-  useEffect(() => {
-    console.log(previousRef, currentRef);
-  }, [previousRef, currentRef]);
 
   return (
     <nav className="px-4 py-2   xl:px-[2.75rem] xl:py-[0.5rem] w-auto top-0 left-0  ">
@@ -376,33 +366,26 @@ let DesktopMenu = (props) => {
             <div className="hidden sm:ml-6 md:block">
               <div className="flex whitespace-nowrap md:space-x-1 lg:space-x-3">
                 <a
-                  ref={navRef}
+                
                   style={{ color: props.color }}
                   href=""
                   onClick={(e) => {
                     Navigate("/");
                     e.preventDefault();
-                    setCurrentRef((prev) => {
-                      setPreviousRef(prev);
-                      return navRef.current;
-                    });
+                   
                   }}
                   className="text-black-300 px-1 lg:px-3 font-[800] py-2 rounded-md text-sm "
                   aria-current="page"
                 >
-                  Home1
+                  Home
                 </a>
 
                 <a
-                ref={navRef}
+                
                   href=""
                   onClick={(e) => {
                     Navigate("/aboutus");
                     e.preventDefault();
-                    setCurrentRef((prev) => {
-                      setPreviousRef(prev);
-                      return navRef.current;
-                    });
                   }}
                   className="text-black-300 px-1 font-[800] lg:px-3 py-2 rounded-md text-sm "
                 >
@@ -485,14 +468,27 @@ let DesktopMenu = (props) => {
                 >
                   Contact us
                 </a>
+                <a
+                  href="#"
+                  onClick={() => {
+                    Navigate("/login");
+                   
+                  }}
+                  
+                  className="active:text-red-500 text-black-300 font-[800] px-1 lg:px-4 py-2 rounded-md text-sm "
+                  // onClick={isLoggedIn ? handleLogout : handleLogin}
+                >
+                  {!loginUser == "" ? <h1>LogOut</h1> : <h1>LogIn</h1>}
+                  {/* Log In/ */}
+                </a>
 
                 <a
                   href="/"
                   id="button"
-                  className=" text-[#fff] px-[20px] py-[10px] ml-8 border rounded sm:hidden xl:block  bg-[#4a6021] 
-                    "
+                  className=" text-[#fff] px-[20px] py-[10px] ml-8 border rounded sm:hidden xl:block  bg-[#4a6021]"
                 >
-                  <i className="fa-solid fa-phone mr-[10px] "></i>333.278.06622
+                  <i className="fa-solid fa-phone mr-[10px] "></i>
+                  {loginUser}
                 </a>
               </div>
             </div>
@@ -505,7 +501,7 @@ let DesktopMenu = (props) => {
       </div>
 
       <div
-        className=" w-full  rounded  shadow-lg ring-1 ring-black ring-opacity-5 sm:hidden relative"
+        className=" w-full  rounded  shadow-lg ring-1 ring-black ring-opacity-5 md:hidden relative"
         id="mobile-menu"
       >
         {!open ? (
@@ -598,12 +594,19 @@ let DesktopMenu = (props) => {
               Contact us
             </a>
             <a
+              href="#"
+              onClick={() => Navigate("/login")}
+              className="text-black-500  block px-3 py-2 rounded-md text-lg font-medium"
+            >
+              Login
+            </a>
+            <a
               href="/"
               className="flex w-full items-center justify-center rounded-xl shadow-md    text-[#fff] px-[20px] py-[10px] border  bg-[#4a6021] 
                   "
             >
               <i className="font-medium text-base fa-solid fa-phone mr-[10px] "></i>
-              333.278.06622
+              {loginUser}
             </a>
           </div>
         )}

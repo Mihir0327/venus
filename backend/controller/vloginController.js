@@ -22,7 +22,7 @@ const vLoginController = async (req,res) => {
         }
 
             const user =await signInModel.findOne({email})
-            
+            console.log(user)
             if(!user){
                 return res.send({
                     success:false,
@@ -39,9 +39,21 @@ const vLoginController = async (req,res) => {
                         message:"password is incorrect"
                     })
                 }else{
+
+                    // const token = user.tokens
+                    // console.log(token,"token")
+                    // // res.cookie("loginToken", token)
+                    // res.cookie("loginToken", token, { 
+                    //     sameSite: 'none', 
+                    //     secure: true,
+                    //     httpOnly:true
+                    //   });
+                      
                     return res.status(200).send({
                         success:true,
-                        message:"login successfull"
+                        message:"login successfull",
+                        user:user
+
                     })
                 }
             }

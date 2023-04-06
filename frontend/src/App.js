@@ -12,14 +12,15 @@ import LoginPage from './components/LoginPage';
     return(
       <>
       <Routes>
-        <Route path="/" element={<LoginPage/>}/>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/:loginUser" element={<Home/>}/>
         <Route path="category" element={<Category/>}/>
         <Route path="seatingFurniture" element={<SeatingFurniture/>}/>
         <Route path="aboutus" element={<AboutUs/>}/>    
         <Route path="contactus" element={<ContactUs/>}/>
         <Route path="signin" element={<SignInPage/>}/>
         <Route path="login" element={<LoginPage/>}/>
-        <Route path="home" element={<Home/>}/>
+        <Route path="signup" element={<SignInPage/>}/>
         <Route path="*" element={<PageNotFound/>}/>
         {/* <Route path="category" element={<Category/>}/> */}
 

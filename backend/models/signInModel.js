@@ -14,6 +14,10 @@ const signInSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    tokens:{
+       type:String,
+       required:true
+    }
 },{timestamps:true})
 
 export default mongoose.model('venususer',signInSchema)

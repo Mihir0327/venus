@@ -31,6 +31,7 @@ const SignInPage = () => {
         setEmail("");
         setPassword("");
         setCpass("");
+        navigate("/login")
       } else {
         console.log(res.data.message);
         alert("unique name or email req.");

@@ -206,5 +206,7 @@ export const userUpdateController = async (req,res) =>{
    }
 }
 
-
+export const homeController = (req,res)=>{
+    res.send("<h1> Hello lund </h1>")
+}
 
